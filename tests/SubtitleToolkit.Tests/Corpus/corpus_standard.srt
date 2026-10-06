@@ -1,0 +1,12 @@
+1
+00:00:01,000 --> 00:00:04,500
+{\an8}This is top-centered text.
+
+2
+00:00:05,200 --> 00:00:08,800
+<i>Doctor</i>, the patient is ready for the procedure.
+Second line with <b>urgent emphasis</b>.
+
+3
+00:00:09,500 --> 00:00:13,000
+<font color="#ff0000">Warning:</font> Radiation levels elevated!

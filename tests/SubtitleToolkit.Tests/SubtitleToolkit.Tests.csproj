@@ -18,4 +18,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\SubtitleToolkit\SubtitleToolkit.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Corpus\**" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
 </Project>

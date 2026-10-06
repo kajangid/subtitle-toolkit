@@ -1,0 +1,20 @@
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:900000,LOCAL:00:00:00.000
+
+NOTE
+This is an introductory comment block before the main broadcast.
+
+1
+00:00:01.000 --> 00:00:04.500 position:50% line:90% align:center size:80%
+<v Host>Welcome to the global technology summit.
+
+NOTE
+Commercial break transition notice.
+
+2
+00:00:05.200 --> 00:00:08.800 position:20% line:15% align:left
+<v Guest>Thank you for having me today.
+
+3
+00:00:09.500 --> 00:00:13.000
+We will discuss advancements in <b>artificial intelligence</b> and <i>quantum computing</i>.

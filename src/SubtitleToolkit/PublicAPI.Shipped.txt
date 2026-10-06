@@ -1,0 +1,693 @@
+#nullable enable
+abstract SubtitleToolkit.Formats.Ass.AssTag.Name.get -> string!
+abstract SubtitleToolkit.Model.FormatData.CueFormatData.Format.get -> SubtitleToolkit.Model.SubtitleFormat
+abstract SubtitleToolkit.Model.FormatData.DocumentFormatData.Format.get -> SubtitleToolkit.Model.SubtitleFormat
+const SubtitleToolkit.Diagnostics.ConversionNoticeCode.AlignmentConverted = "ALIGNMENT_CONVERTED" -> string!
+const SubtitleToolkit.Diagnostics.ConversionNoticeCode.DrawingDropped = "DRAWING_DROPPED" -> string!
+const SubtitleToolkit.Diagnostics.ConversionNoticeCode.NonCueBlocksDropped = "NON_CUE_BLOCKS_DROPPED" -> string!
+const SubtitleToolkit.Diagnostics.ConversionNoticeCode.PositioningConverted = "POSITIONING_CONVERTED" -> string!
+const SubtitleToolkit.Diagnostics.ConversionNoticeCode.PositioningDropped = "POSITIONING_DROPPED" -> string!
+const SubtitleToolkit.Diagnostics.ConversionNoticeCode.ScriptInfoDropped = "SCRIPT_INFO_DROPPED" -> string!
+const SubtitleToolkit.Diagnostics.ConversionNoticeCode.SnapToLinesConverted = "SNAP_TO_LINES_CONVERTED" -> string!
+const SubtitleToolkit.Diagnostics.ConversionNoticeCode.StaleFormatDataDropped = "STALE_FORMAT_DATA_DROPPED" -> string!
+const SubtitleToolkit.Diagnostics.ConversionNoticeCode.StyleTableDropped = "STYLE_TABLE_DROPPED" -> string!
+const SubtitleToolkit.Diagnostics.ConversionNoticeCode.UnsupportedTagStripped = "UNSUPPORTED_TAG_STRIPPED" -> string!
+const SubtitleToolkit.Diagnostics.ConversionNoticeCode.VoiceTagConverted = "VOICE_TAG_CONVERTED" -> string!
+override abstract SubtitleToolkit.Formats.Ass.AssTag.ToString() -> string!
+override SubtitleToolkit.Diagnostics.ConversionNotice.Equals(object? obj) -> bool
+override SubtitleToolkit.Diagnostics.ConversionNotice.GetHashCode() -> int
+override SubtitleToolkit.Diagnostics.ConversionNotice.ToString() -> string!
+override SubtitleToolkit.Diagnostics.ParseDiagnostic.Equals(object? obj) -> bool
+override SubtitleToolkit.Diagnostics.ParseDiagnostic.GetHashCode() -> int
+override SubtitleToolkit.Diagnostics.ParseDiagnostic.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.AlignmentTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.AlignmentTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.AlphaTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.AlphaTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.AssDialogueAst.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.AssTagBlockElement.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.AssTextElement.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.BlurTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.BlurTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.BoldTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.BoldTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.BorderTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.BorderTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.ClipTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.ClipTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.ColorTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.ColorTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.DrawingTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.DrawingTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.FadeTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.FadeTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.FontNameTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.FontNameTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.FontRotationTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.FontRotationTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.FontScaleTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.FontScaleTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.FontSizeTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.FontSizeTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.FontSpacingTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.FontSpacingTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.ItalicTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.ItalicTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.KaraokeTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.KaraokeTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.MoveTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.MoveTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.OrgTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.OrgTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.PosTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.PosTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.ResetTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.ResetTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.ShadowTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.ShadowTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.StrikeoutTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.StrikeoutTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.TransformTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.TransformTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.UnderlineTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.UnderlineTag.ToString() -> string!
+override SubtitleToolkit.Formats.Ass.UnknownTag.Name.get -> string!
+override SubtitleToolkit.Formats.Ass.UnknownTag.ToString() -> string!
+override SubtitleToolkit.Formats.AssTagToken.Equals(object? obj) -> bool
+override SubtitleToolkit.Formats.AssTagToken.GetHashCode() -> int
+override SubtitleToolkit.Formats.AssTagToken.ToString() -> string!
+override SubtitleToolkit.Formats.SsaHandler.Format.get -> SubtitleToolkit.Model.SubtitleFormat
+override SubtitleToolkit.Model.FormatData.AssCueData.Equals(object? obj) -> bool
+override SubtitleToolkit.Model.FormatData.AssCueData.Format.get -> SubtitleToolkit.Model.SubtitleFormat
+override SubtitleToolkit.Model.FormatData.AssCueData.GetHashCode() -> int
+override SubtitleToolkit.Model.FormatData.AssDocumentData.Equals(object? obj) -> bool
+override SubtitleToolkit.Model.FormatData.AssDocumentData.Format.get -> SubtitleToolkit.Model.SubtitleFormat
+override SubtitleToolkit.Model.FormatData.AssDocumentData.GetHashCode() -> int
+override SubtitleToolkit.Model.FormatData.AssStyle.Equals(object? obj) -> bool
+override SubtitleToolkit.Model.FormatData.AssStyle.GetHashCode() -> int
+override SubtitleToolkit.Model.FormatData.RawAssSection.Equals(object? obj) -> bool
+override SubtitleToolkit.Model.FormatData.RawAssSection.GetHashCode() -> int
+override SubtitleToolkit.Model.FormatData.SrtCueData.Equals(object? obj) -> bool
+override SubtitleToolkit.Model.FormatData.SrtCueData.Format.get -> SubtitleToolkit.Model.SubtitleFormat
+override SubtitleToolkit.Model.FormatData.SrtCueData.GetHashCode() -> int
+override SubtitleToolkit.Model.FormatData.VttAnchoredBlock.Equals(object? obj) -> bool
+override SubtitleToolkit.Model.FormatData.VttAnchoredBlock.GetHashCode() -> int
+override SubtitleToolkit.Model.FormatData.VttCueData.Equals(object? obj) -> bool
+override SubtitleToolkit.Model.FormatData.VttCueData.Format.get -> SubtitleToolkit.Model.SubtitleFormat
+override SubtitleToolkit.Model.FormatData.VttCueData.GetHashCode() -> int
+override SubtitleToolkit.Model.FormatData.VttCueSettings.Equals(object? obj) -> bool
+override SubtitleToolkit.Model.FormatData.VttCueSettings.GetHashCode() -> int
+override SubtitleToolkit.Model.FormatData.VttDocumentData.Equals(object? obj) -> bool
+override SubtitleToolkit.Model.FormatData.VttDocumentData.Format.get -> SubtitleToolkit.Model.SubtitleFormat
+override SubtitleToolkit.Model.FormatData.VttDocumentData.GetHashCode() -> int
+override SubtitleToolkit.Model.FormatData.VttLineSetting.Equals(object? obj) -> bool
+override SubtitleToolkit.Model.FormatData.VttLineSetting.GetHashCode() -> int
+override SubtitleToolkit.Model.FormatData.VttLineSetting.ToString() -> string!
+override SubtitleToolkit.Model.FormatData.VttPositionSetting.Equals(object? obj) -> bool
+override SubtitleToolkit.Model.FormatData.VttPositionSetting.GetHashCode() -> int
+override SubtitleToolkit.Model.FormatData.VttPositionSetting.ToString() -> string!
+override SubtitleToolkit.Model.SubtitleCue.Equals(object? obj) -> bool
+override SubtitleToolkit.Model.SubtitleCue.GetHashCode() -> int
+override SubtitleToolkit.Model.SubtitleCue.ToString() -> string!
+override SubtitleToolkit.Model.SubtitleDocument.Equals(object? obj) -> bool
+override SubtitleToolkit.Model.SubtitleDocument.GetHashCode() -> int
+override SubtitleToolkit.Model.SubtitleDocument.ToString() -> string!
+static SubtitleToolkit.Common.SubtitleConverter.Convert(SubtitleToolkit.Model.SubtitleDocument! doc, SubtitleToolkit.Model.SubtitleFormat targetFormat, SubtitleToolkit.Diagnostics.ConversionOptions? options = null) -> SubtitleToolkit.Diagnostics.ConversionResult!
+static SubtitleToolkit.Common.SubtitleTextHelper.ExtractPlainText(string! rawText, SubtitleToolkit.Model.SubtitleFormat? format) -> string!
+static SubtitleToolkit.Common.TimestampHelper.FormatAss(System.TimeSpan time) -> string!
+static SubtitleToolkit.Common.TimestampHelper.FormatSrt(System.TimeSpan time) -> string!
+static SubtitleToolkit.Common.TimestampHelper.FormatVtt(System.TimeSpan time) -> string!
+static SubtitleToolkit.Common.TimestampHelper.TryParseAssTimestamp(string! text, out System.TimeSpan time) -> bool
+static SubtitleToolkit.Common.TimestampHelper.TryParseSrtTimestamp(string! text, out System.TimeSpan time) -> bool
+static SubtitleToolkit.Common.TimestampHelper.TryParseVttTimestamp(string! text, out System.TimeSpan time) -> bool
+static SubtitleToolkit.Diagnostics.ConversionResult.implicit operator SubtitleToolkit.Model.SubtitleDocument!(SubtitleToolkit.Diagnostics.ConversionResult! result) -> SubtitleToolkit.Model.SubtitleDocument!
+static SubtitleToolkit.Diagnostics.ParseResult.implicit operator SubtitleToolkit.Model.SubtitleDocument!(SubtitleToolkit.Diagnostics.ParseResult! result) -> SubtitleToolkit.Model.SubtitleDocument!
+static SubtitleToolkit.Formats.Ass.AssDialogueAst.Parse(string! rawText) -> SubtitleToolkit.Formats.Ass.AssDialogueAst!
+static SubtitleToolkit.Formats.Ass.AssTagParser.FormatBlock(System.Collections.Generic.IEnumerable<SubtitleToolkit.Formats.Ass.AssTag!>! tags) -> string!
+static SubtitleToolkit.Formats.Ass.AssTagParser.ParseBlock(string! block) -> System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Formats.Ass.AssTag!>!
+static SubtitleToolkit.Formats.Ass.AssTagParser.ParseTag(SubtitleToolkit.Formats.AssTagToken token) -> SubtitleToolkit.Formats.Ass.AssTag!
+static SubtitleToolkit.Formats.AssTagToken.operator !=(SubtitleToolkit.Formats.AssTagToken left, SubtitleToolkit.Formats.AssTagToken right) -> bool
+static SubtitleToolkit.Formats.AssTagToken.operator ==(SubtitleToolkit.Formats.AssTagToken left, SubtitleToolkit.Formats.AssTagToken right) -> bool
+static SubtitleToolkit.Formats.AssTagTokenizer.ExtractBlocks(string! text) -> System.Collections.Generic.IEnumerable<System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Formats.AssTagToken>!>!
+static SubtitleToolkit.Formats.AssTagTokenizer.FormatBlock(System.Collections.Generic.IEnumerable<SubtitleToolkit.Formats.AssTagToken>! tokens) -> string!
+static SubtitleToolkit.Formats.AssTagTokenizer.FormatTags(System.Collections.Generic.IEnumerable<SubtitleToolkit.Formats.AssTagToken>! tokens) -> string!
+static SubtitleToolkit.Formats.AssTagTokenizer.Tokenize(string! block) -> System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Formats.AssTagToken>!
+static SubtitleToolkit.Formats.AssTagTokenizer.TokenizeBlock(string! block) -> System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Formats.AssTagToken>!
+static SubtitleToolkit.Formats.FormatDetector.Detect(string! content) -> SubtitleToolkit.Model.SubtitleFormat
+static SubtitleToolkit.IO.SubtitleEncoding.DecodeBytes(byte[]! bytes, System.Text.Encoding? fallbackEncoding, out System.Text.Encoding! detectedEncoding) -> string!
+static SubtitleToolkit.IO.SubtitleEncoding.ReadString(System.IO.Stream! stream, System.Text.Encoding? fallbackEncoding, out System.Text.Encoding! detectedEncoding) -> string!
+static SubtitleToolkit.Model.FormatData.VttCueSettings.Parse(string? settingsString) -> SubtitleToolkit.Model.FormatData.VttCueSettings!
+static SubtitleToolkit.Subtitle.Convert(SubtitleToolkit.Model.SubtitleDocument! doc, SubtitleToolkit.Model.SubtitleFormat targetFormat, SubtitleToolkit.Diagnostics.ConversionOptions? options = null) -> SubtitleToolkit.Diagnostics.ConversionResult!
+static SubtitleToolkit.Subtitle.Load(string! path, SubtitleToolkit.IO.SubtitleReadOptions? options = null) -> SubtitleToolkit.Diagnostics.ParseResult!
+static SubtitleToolkit.Subtitle.Load(System.IO.Stream! stream, SubtitleToolkit.Model.SubtitleFormat? format = null, SubtitleToolkit.IO.SubtitleReadOptions? options = null) -> SubtitleToolkit.Diagnostics.ParseResult!
+static SubtitleToolkit.Subtitle.LoadAsync(string! path, SubtitleToolkit.IO.SubtitleReadOptions? options = null, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<SubtitleToolkit.Diagnostics.ParseResult!>!
+static SubtitleToolkit.Subtitle.LoadAsync(System.IO.Stream! stream, SubtitleToolkit.Model.SubtitleFormat? format = null, SubtitleToolkit.IO.SubtitleReadOptions? options = null, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<SubtitleToolkit.Diagnostics.ParseResult!>!
+static SubtitleToolkit.Subtitle.Parse(string! content, SubtitleToolkit.Model.SubtitleFormat? format = null, SubtitleToolkit.IO.SubtitleReadOptions? options = null) -> SubtitleToolkit.Diagnostics.ParseResult!
+static SubtitleToolkit.Subtitle.Save(SubtitleToolkit.Model.SubtitleDocument! doc, string! path, SubtitleToolkit.Model.SubtitleFormat? targetFormat = null, SubtitleToolkit.IO.SubtitleWriteOptions? options = null) -> void
+static SubtitleToolkit.Subtitle.Save(SubtitleToolkit.Model.SubtitleDocument! doc, System.IO.Stream! stream, SubtitleToolkit.Model.SubtitleFormat targetFormat, SubtitleToolkit.IO.SubtitleWriteOptions? options = null) -> void
+static SubtitleToolkit.Subtitle.SaveAsync(SubtitleToolkit.Model.SubtitleDocument! doc, string! path, SubtitleToolkit.Model.SubtitleFormat? targetFormat = null, SubtitleToolkit.IO.SubtitleWriteOptions? options = null, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+static SubtitleToolkit.Subtitle.SaveAsync(SubtitleToolkit.Model.SubtitleDocument! doc, System.IO.Stream! stream, SubtitleToolkit.Model.SubtitleFormat targetFormat, SubtitleToolkit.IO.SubtitleWriteOptions? options = null, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+static SubtitleToolkit.Subtitle.TimeShift(SubtitleToolkit.Model.SubtitleDocument! doc, System.TimeSpan offset, SubtitleToolkit.TimeShiftOptions? options = null) -> SubtitleToolkit.Model.SubtitleDocument!
+static SubtitleToolkit.Subtitle.WriteToString(SubtitleToolkit.Model.SubtitleDocument! doc, SubtitleToolkit.Model.SubtitleFormat targetFormat, SubtitleToolkit.IO.SubtitleWriteOptions? options = null) -> string!
+static SubtitleToolkit.TimeShifter.Shift(SubtitleToolkit.Model.SubtitleDocument! doc, System.TimeSpan offset, SubtitleToolkit.TimeShiftOptions? options = null) -> SubtitleToolkit.Model.SubtitleDocument!
+SubtitleToolkit.Common.SubtitleConverter
+SubtitleToolkit.Common.SubtitleTextHelper
+SubtitleToolkit.Common.TimestampHelper
+SubtitleToolkit.Diagnostics.ConversionNotice
+SubtitleToolkit.Diagnostics.ConversionNotice.Code.get -> string!
+SubtitleToolkit.Diagnostics.ConversionNotice.ConversionNotice(SubtitleToolkit.Diagnostics.ConversionSeverity severity, string! code, string! message, int? cueIndex = null, string? featureName = null) -> void
+SubtitleToolkit.Diagnostics.ConversionNotice.CueIndex.get -> int?
+SubtitleToolkit.Diagnostics.ConversionNotice.Equals(SubtitleToolkit.Diagnostics.ConversionNotice? other) -> bool
+SubtitleToolkit.Diagnostics.ConversionNotice.FeatureName.get -> string?
+SubtitleToolkit.Diagnostics.ConversionNotice.Message.get -> string!
+SubtitleToolkit.Diagnostics.ConversionNotice.Severity.get -> SubtitleToolkit.Diagnostics.ConversionSeverity
+SubtitleToolkit.Diagnostics.ConversionNoticeCode
+SubtitleToolkit.Diagnostics.ConversionOptions
+SubtitleToolkit.Diagnostics.ConversionOptions.ConversionOptions() -> void
+SubtitleToolkit.Diagnostics.ConversionOptions.DefaultStyleName.get -> string!
+SubtitleToolkit.Diagnostics.ConversionOptions.DefaultStyleName.set -> void
+SubtitleToolkit.Diagnostics.ConversionOptions.TargetPlayResX.get -> int
+SubtitleToolkit.Diagnostics.ConversionOptions.TargetPlayResX.set -> void
+SubtitleToolkit.Diagnostics.ConversionOptions.TargetPlayResY.get -> int
+SubtitleToolkit.Diagnostics.ConversionOptions.TargetPlayResY.set -> void
+SubtitleToolkit.Diagnostics.ConversionOptions.ThrowOnLoss.get -> bool
+SubtitleToolkit.Diagnostics.ConversionOptions.ThrowOnLoss.set -> void
+SubtitleToolkit.Diagnostics.ConversionReport
+SubtitleToolkit.Diagnostics.ConversionReport.ConversionReport(System.Collections.Generic.IEnumerable<SubtitleToolkit.Diagnostics.ConversionNotice!>? notices = null) -> void
+SubtitleToolkit.Diagnostics.ConversionReport.HasErrors.get -> bool
+SubtitleToolkit.Diagnostics.ConversionReport.HasWarnings.get -> bool
+SubtitleToolkit.Diagnostics.ConversionReport.IsLossless.get -> bool
+SubtitleToolkit.Diagnostics.ConversionReport.Notices.get -> System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Diagnostics.ConversionNotice!>!
+SubtitleToolkit.Diagnostics.ConversionResult
+SubtitleToolkit.Diagnostics.ConversionResult.ConversionResult(SubtitleToolkit.Model.SubtitleDocument! document, SubtitleToolkit.Diagnostics.ConversionReport! report) -> void
+SubtitleToolkit.Diagnostics.ConversionResult.Document.get -> SubtitleToolkit.Model.SubtitleDocument!
+SubtitleToolkit.Diagnostics.ConversionResult.Report.get -> SubtitleToolkit.Diagnostics.ConversionReport!
+SubtitleToolkit.Diagnostics.ConversionSeverity
+SubtitleToolkit.Diagnostics.ConversionSeverity.Error = 2 -> SubtitleToolkit.Diagnostics.ConversionSeverity
+SubtitleToolkit.Diagnostics.ConversionSeverity.Info = 0 -> SubtitleToolkit.Diagnostics.ConversionSeverity
+SubtitleToolkit.Diagnostics.ConversionSeverity.Warning = 1 -> SubtitleToolkit.Diagnostics.ConversionSeverity
+SubtitleToolkit.Diagnostics.DiagnosticSeverity
+SubtitleToolkit.Diagnostics.DiagnosticSeverity.Error = 2 -> SubtitleToolkit.Diagnostics.DiagnosticSeverity
+SubtitleToolkit.Diagnostics.DiagnosticSeverity.Info = 0 -> SubtitleToolkit.Diagnostics.DiagnosticSeverity
+SubtitleToolkit.Diagnostics.DiagnosticSeverity.Warning = 1 -> SubtitleToolkit.Diagnostics.DiagnosticSeverity
+SubtitleToolkit.Diagnostics.ParseDiagnostic
+SubtitleToolkit.Diagnostics.ParseDiagnostic.Code.get -> string!
+SubtitleToolkit.Diagnostics.ParseDiagnostic.Equals(SubtitleToolkit.Diagnostics.ParseDiagnostic? other) -> bool
+SubtitleToolkit.Diagnostics.ParseDiagnostic.LineNumber.get -> int
+SubtitleToolkit.Diagnostics.ParseDiagnostic.Message.get -> string!
+SubtitleToolkit.Diagnostics.ParseDiagnostic.ParseDiagnostic(SubtitleToolkit.Diagnostics.DiagnosticSeverity severity, int lineNumber, string! code, string! message) -> void
+SubtitleToolkit.Diagnostics.ParseDiagnostic.Severity.get -> SubtitleToolkit.Diagnostics.DiagnosticSeverity
+SubtitleToolkit.Diagnostics.ParseResult
+SubtitleToolkit.Diagnostics.ParseResult.Diagnostics.get -> System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Diagnostics.ParseDiagnostic!>!
+SubtitleToolkit.Diagnostics.ParseResult.Document.get -> SubtitleToolkit.Model.SubtitleDocument!
+SubtitleToolkit.Diagnostics.ParseResult.HasErrors.get -> bool
+SubtitleToolkit.Diagnostics.ParseResult.HasWarnings.get -> bool
+SubtitleToolkit.Diagnostics.ParseResult.ParseResult(SubtitleToolkit.Model.SubtitleDocument! document, System.Collections.Generic.IEnumerable<SubtitleToolkit.Diagnostics.ParseDiagnostic!>? diagnostics = null) -> void
+SubtitleToolkit.Diagnostics.SubtitleConversionException
+SubtitleToolkit.Diagnostics.SubtitleConversionException.Report.get -> SubtitleToolkit.Diagnostics.ConversionReport!
+SubtitleToolkit.Diagnostics.SubtitleConversionException.SubtitleConversionException(SubtitleToolkit.Diagnostics.ConversionReport! report, string! message) -> void
+SubtitleToolkit.Diagnostics.SubtitleParseException
+SubtitleToolkit.Diagnostics.SubtitleParseException.LineNumber.get -> int
+SubtitleToolkit.Diagnostics.SubtitleParseException.SubtitleParseException(string! message, int lineNumber = 0) -> void
+SubtitleToolkit.Diagnostics.SubtitleParseException.SubtitleParseException(string! message, int lineNumber, System.Exception! innerException) -> void
+SubtitleToolkit.Formats.Ass.AlignmentTag
+SubtitleToolkit.Formats.Ass.AlignmentTag.Alignment.get -> int
+SubtitleToolkit.Formats.Ass.AlignmentTag.Alignment.init -> void
+SubtitleToolkit.Formats.Ass.AlignmentTag.AlignmentTag(int Alignment, bool IsLegacy = false) -> void
+SubtitleToolkit.Formats.Ass.AlignmentTag.IsLegacy.get -> bool
+SubtitleToolkit.Formats.Ass.AlignmentTag.IsLegacy.init -> void
+SubtitleToolkit.Formats.Ass.AlphaTag
+SubtitleToolkit.Formats.Ass.AlphaTag.Alpha.get -> byte?
+SubtitleToolkit.Formats.Ass.AlphaTag.Alpha.init -> void
+SubtitleToolkit.Formats.Ass.AlphaTag.AlphaTag(int Target, string! RawAlpha, byte? Alpha = null) -> void
+SubtitleToolkit.Formats.Ass.AlphaTag.RawAlpha.get -> string!
+SubtitleToolkit.Formats.Ass.AlphaTag.RawAlpha.init -> void
+SubtitleToolkit.Formats.Ass.AlphaTag.Target.get -> int
+SubtitleToolkit.Formats.Ass.AlphaTag.Target.init -> void
+SubtitleToolkit.Formats.Ass.AssDialogueAst
+SubtitleToolkit.Formats.Ass.AssDialogueAst.AssDialogueAst(System.Collections.Generic.IEnumerable<SubtitleToolkit.Formats.Ass.AssDialogueElement!>! elements) -> void
+SubtitleToolkit.Formats.Ass.AssDialogueAst.Elements.get -> System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Formats.Ass.AssDialogueElement!>!
+SubtitleToolkit.Formats.Ass.AssDialogueAst.Render() -> string!
+SubtitleToolkit.Formats.Ass.AssDialogueElement
+SubtitleToolkit.Formats.Ass.AssTag
+SubtitleToolkit.Formats.Ass.AssTagBlockElement
+SubtitleToolkit.Formats.Ass.AssTagBlockElement.AssTagBlockElement(System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Formats.Ass.AssTag!>! Tags) -> void
+SubtitleToolkit.Formats.Ass.AssTagBlockElement.Tags.get -> System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Formats.Ass.AssTag!>!
+SubtitleToolkit.Formats.Ass.AssTagBlockElement.Tags.init -> void
+SubtitleToolkit.Formats.Ass.AssTagParser
+SubtitleToolkit.Formats.Ass.AssTextElement
+SubtitleToolkit.Formats.Ass.AssTextElement.AssTextElement(string! Text) -> void
+SubtitleToolkit.Formats.Ass.AssTextElement.Text.get -> string!
+SubtitleToolkit.Formats.Ass.AssTextElement.Text.init -> void
+SubtitleToolkit.Formats.Ass.BlurTag
+SubtitleToolkit.Formats.Ass.BlurTag.BlurTag(double Strength, bool Edges = false) -> void
+SubtitleToolkit.Formats.Ass.BlurTag.Edges.get -> bool
+SubtitleToolkit.Formats.Ass.BlurTag.Edges.init -> void
+SubtitleToolkit.Formats.Ass.BlurTag.Strength.get -> double
+SubtitleToolkit.Formats.Ass.BlurTag.Strength.init -> void
+SubtitleToolkit.Formats.Ass.BoldTag
+SubtitleToolkit.Formats.Ass.BoldTag.BoldTag(bool? Enabled = null, int? Weight = null) -> void
+SubtitleToolkit.Formats.Ass.BoldTag.Enabled.get -> bool?
+SubtitleToolkit.Formats.Ass.BoldTag.Enabled.init -> void
+SubtitleToolkit.Formats.Ass.BoldTag.Weight.get -> int?
+SubtitleToolkit.Formats.Ass.BoldTag.Weight.init -> void
+SubtitleToolkit.Formats.Ass.BorderTag
+SubtitleToolkit.Formats.Ass.BorderTag.Axis.get -> char?
+SubtitleToolkit.Formats.Ass.BorderTag.Axis.init -> void
+SubtitleToolkit.Formats.Ass.BorderTag.BorderTag(double Width, char? Axis = null) -> void
+SubtitleToolkit.Formats.Ass.BorderTag.Width.get -> double
+SubtitleToolkit.Formats.Ass.BorderTag.Width.init -> void
+SubtitleToolkit.Formats.Ass.ClipTag
+SubtitleToolkit.Formats.Ass.ClipTag.ClipTag(bool Inverse, string! RawArgs, double? X1 = null, double? Y1 = null, double? X2 = null, double? Y2 = null, string? DrawingCommands = null) -> void
+SubtitleToolkit.Formats.Ass.ClipTag.DrawingCommands.get -> string?
+SubtitleToolkit.Formats.Ass.ClipTag.DrawingCommands.init -> void
+SubtitleToolkit.Formats.Ass.ClipTag.Inverse.get -> bool
+SubtitleToolkit.Formats.Ass.ClipTag.Inverse.init -> void
+SubtitleToolkit.Formats.Ass.ClipTag.RawArgs.get -> string!
+SubtitleToolkit.Formats.Ass.ClipTag.RawArgs.init -> void
+SubtitleToolkit.Formats.Ass.ClipTag.X1.get -> double?
+SubtitleToolkit.Formats.Ass.ClipTag.X1.init -> void
+SubtitleToolkit.Formats.Ass.ClipTag.X2.get -> double?
+SubtitleToolkit.Formats.Ass.ClipTag.X2.init -> void
+SubtitleToolkit.Formats.Ass.ClipTag.Y1.get -> double?
+SubtitleToolkit.Formats.Ass.ClipTag.Y1.init -> void
+SubtitleToolkit.Formats.Ass.ClipTag.Y2.get -> double?
+SubtitleToolkit.Formats.Ass.ClipTag.Y2.init -> void
+SubtitleToolkit.Formats.Ass.ColorTag
+SubtitleToolkit.Formats.Ass.ColorTag.Blue.get -> byte?
+SubtitleToolkit.Formats.Ass.ColorTag.Blue.init -> void
+SubtitleToolkit.Formats.Ass.ColorTag.ColorTag(int Target, string! RawColor, bool UseShorthand = false, byte? Red = null, byte? Green = null, byte? Blue = null) -> void
+SubtitleToolkit.Formats.Ass.ColorTag.Green.get -> byte?
+SubtitleToolkit.Formats.Ass.ColorTag.Green.init -> void
+SubtitleToolkit.Formats.Ass.ColorTag.RawColor.get -> string!
+SubtitleToolkit.Formats.Ass.ColorTag.RawColor.init -> void
+SubtitleToolkit.Formats.Ass.ColorTag.Red.get -> byte?
+SubtitleToolkit.Formats.Ass.ColorTag.Red.init -> void
+SubtitleToolkit.Formats.Ass.ColorTag.Target.get -> int
+SubtitleToolkit.Formats.Ass.ColorTag.Target.init -> void
+SubtitleToolkit.Formats.Ass.ColorTag.UseShorthand.get -> bool
+SubtitleToolkit.Formats.Ass.ColorTag.UseShorthand.init -> void
+SubtitleToolkit.Formats.Ass.DrawingTag
+SubtitleToolkit.Formats.Ass.DrawingTag.BaselineOffset.get -> int?
+SubtitleToolkit.Formats.Ass.DrawingTag.BaselineOffset.init -> void
+SubtitleToolkit.Formats.Ass.DrawingTag.DrawingTag(int Scale, int? BaselineOffset = null) -> void
+SubtitleToolkit.Formats.Ass.DrawingTag.Scale.get -> int
+SubtitleToolkit.Formats.Ass.DrawingTag.Scale.init -> void
+SubtitleToolkit.Formats.Ass.FadeTag
+SubtitleToolkit.Formats.Ass.FadeTag.A1.get -> int?
+SubtitleToolkit.Formats.Ass.FadeTag.A1.init -> void
+SubtitleToolkit.Formats.Ass.FadeTag.A2.get -> int?
+SubtitleToolkit.Formats.Ass.FadeTag.A2.init -> void
+SubtitleToolkit.Formats.Ass.FadeTag.A3.get -> int?
+SubtitleToolkit.Formats.Ass.FadeTag.A3.init -> void
+SubtitleToolkit.Formats.Ass.FadeTag.FadeIn.get -> int?
+SubtitleToolkit.Formats.Ass.FadeTag.FadeIn.init -> void
+SubtitleToolkit.Formats.Ass.FadeTag.FadeOut.get -> int?
+SubtitleToolkit.Formats.Ass.FadeTag.FadeOut.init -> void
+SubtitleToolkit.Formats.Ass.FadeTag.FadeTag(bool IsSimple, int? FadeIn = null, int? FadeOut = null, int? A1 = null, int? A2 = null, int? A3 = null, int? T1 = null, int? T2 = null, int? T3 = null, int? T4 = null, string? RawArgs = null) -> void
+SubtitleToolkit.Formats.Ass.FadeTag.IsSimple.get -> bool
+SubtitleToolkit.Formats.Ass.FadeTag.IsSimple.init -> void
+SubtitleToolkit.Formats.Ass.FadeTag.RawArgs.get -> string?
+SubtitleToolkit.Formats.Ass.FadeTag.RawArgs.init -> void
+SubtitleToolkit.Formats.Ass.FadeTag.T1.get -> int?
+SubtitleToolkit.Formats.Ass.FadeTag.T1.init -> void
+SubtitleToolkit.Formats.Ass.FadeTag.T2.get -> int?
+SubtitleToolkit.Formats.Ass.FadeTag.T2.init -> void
+SubtitleToolkit.Formats.Ass.FadeTag.T3.get -> int?
+SubtitleToolkit.Formats.Ass.FadeTag.T3.init -> void
+SubtitleToolkit.Formats.Ass.FadeTag.T4.get -> int?
+SubtitleToolkit.Formats.Ass.FadeTag.T4.init -> void
+SubtitleToolkit.Formats.Ass.FontNameTag
+SubtitleToolkit.Formats.Ass.FontNameTag.FontName.get -> string!
+SubtitleToolkit.Formats.Ass.FontNameTag.FontName.init -> void
+SubtitleToolkit.Formats.Ass.FontNameTag.FontNameTag(string! FontName) -> void
+SubtitleToolkit.Formats.Ass.FontRotationTag
+SubtitleToolkit.Formats.Ass.FontRotationTag.Angle.get -> double
+SubtitleToolkit.Formats.Ass.FontRotationTag.Angle.init -> void
+SubtitleToolkit.Formats.Ass.FontRotationTag.Axis.get -> char?
+SubtitleToolkit.Formats.Ass.FontRotationTag.Axis.init -> void
+SubtitleToolkit.Formats.Ass.FontRotationTag.FontRotationTag(char? Axis, double Angle) -> void
+SubtitleToolkit.Formats.Ass.FontScaleTag
+SubtitleToolkit.Formats.Ass.FontScaleTag.Axis.get -> char
+SubtitleToolkit.Formats.Ass.FontScaleTag.Axis.init -> void
+SubtitleToolkit.Formats.Ass.FontScaleTag.FontScaleTag(char Axis, double Scale) -> void
+SubtitleToolkit.Formats.Ass.FontScaleTag.Scale.get -> double
+SubtitleToolkit.Formats.Ass.FontScaleTag.Scale.init -> void
+SubtitleToolkit.Formats.Ass.FontSizeTag
+SubtitleToolkit.Formats.Ass.FontSizeTag.FontSizeTag(double Size, string? RawArg = null) -> void
+SubtitleToolkit.Formats.Ass.FontSizeTag.RawArg.get -> string?
+SubtitleToolkit.Formats.Ass.FontSizeTag.RawArg.init -> void
+SubtitleToolkit.Formats.Ass.FontSizeTag.Size.get -> double
+SubtitleToolkit.Formats.Ass.FontSizeTag.Size.init -> void
+SubtitleToolkit.Formats.Ass.FontSpacingTag
+SubtitleToolkit.Formats.Ass.FontSpacingTag.FontSpacingTag(double Spacing) -> void
+SubtitleToolkit.Formats.Ass.FontSpacingTag.Spacing.get -> double
+SubtitleToolkit.Formats.Ass.FontSpacingTag.Spacing.init -> void
+SubtitleToolkit.Formats.Ass.ItalicTag
+SubtitleToolkit.Formats.Ass.ItalicTag.Enabled.get -> bool
+SubtitleToolkit.Formats.Ass.ItalicTag.Enabled.init -> void
+SubtitleToolkit.Formats.Ass.ItalicTag.ItalicTag(bool Enabled) -> void
+SubtitleToolkit.Formats.Ass.KaraokeTag
+SubtitleToolkit.Formats.Ass.KaraokeTag.DurationCentiseconds.get -> int
+SubtitleToolkit.Formats.Ass.KaraokeTag.DurationCentiseconds.init -> void
+SubtitleToolkit.Formats.Ass.KaraokeTag.KaraokeTag(string! Type, int DurationCentiseconds) -> void
+SubtitleToolkit.Formats.Ass.KaraokeTag.Type.get -> string!
+SubtitleToolkit.Formats.Ass.KaraokeTag.Type.init -> void
+SubtitleToolkit.Formats.Ass.MoveTag
+SubtitleToolkit.Formats.Ass.MoveTag.MoveTag(double X1, double Y1, double X2, double Y2, int? T1 = null, int? T2 = null) -> void
+SubtitleToolkit.Formats.Ass.MoveTag.T1.get -> int?
+SubtitleToolkit.Formats.Ass.MoveTag.T1.init -> void
+SubtitleToolkit.Formats.Ass.MoveTag.T2.get -> int?
+SubtitleToolkit.Formats.Ass.MoveTag.T2.init -> void
+SubtitleToolkit.Formats.Ass.MoveTag.X1.get -> double
+SubtitleToolkit.Formats.Ass.MoveTag.X1.init -> void
+SubtitleToolkit.Formats.Ass.MoveTag.X2.get -> double
+SubtitleToolkit.Formats.Ass.MoveTag.X2.init -> void
+SubtitleToolkit.Formats.Ass.MoveTag.Y1.get -> double
+SubtitleToolkit.Formats.Ass.MoveTag.Y1.init -> void
+SubtitleToolkit.Formats.Ass.MoveTag.Y2.get -> double
+SubtitleToolkit.Formats.Ass.MoveTag.Y2.init -> void
+SubtitleToolkit.Formats.Ass.OrgTag
+SubtitleToolkit.Formats.Ass.OrgTag.OrgTag(double X, double Y) -> void
+SubtitleToolkit.Formats.Ass.OrgTag.X.get -> double
+SubtitleToolkit.Formats.Ass.OrgTag.X.init -> void
+SubtitleToolkit.Formats.Ass.OrgTag.Y.get -> double
+SubtitleToolkit.Formats.Ass.OrgTag.Y.init -> void
+SubtitleToolkit.Formats.Ass.PosTag
+SubtitleToolkit.Formats.Ass.PosTag.PosTag(double X, double Y) -> void
+SubtitleToolkit.Formats.Ass.PosTag.X.get -> double
+SubtitleToolkit.Formats.Ass.PosTag.X.init -> void
+SubtitleToolkit.Formats.Ass.PosTag.Y.get -> double
+SubtitleToolkit.Formats.Ass.PosTag.Y.init -> void
+SubtitleToolkit.Formats.Ass.ResetTag
+SubtitleToolkit.Formats.Ass.ResetTag.ResetTag(string? StyleName = null) -> void
+SubtitleToolkit.Formats.Ass.ResetTag.StyleName.get -> string?
+SubtitleToolkit.Formats.Ass.ResetTag.StyleName.init -> void
+SubtitleToolkit.Formats.Ass.ShadowTag
+SubtitleToolkit.Formats.Ass.ShadowTag.Axis.get -> char?
+SubtitleToolkit.Formats.Ass.ShadowTag.Axis.init -> void
+SubtitleToolkit.Formats.Ass.ShadowTag.Depth.get -> double
+SubtitleToolkit.Formats.Ass.ShadowTag.Depth.init -> void
+SubtitleToolkit.Formats.Ass.ShadowTag.ShadowTag(double Depth, char? Axis = null) -> void
+SubtitleToolkit.Formats.Ass.StrikeoutTag
+SubtitleToolkit.Formats.Ass.StrikeoutTag.Enabled.get -> bool
+SubtitleToolkit.Formats.Ass.StrikeoutTag.Enabled.init -> void
+SubtitleToolkit.Formats.Ass.StrikeoutTag.StrikeoutTag(bool Enabled) -> void
+SubtitleToolkit.Formats.Ass.TransformTag
+SubtitleToolkit.Formats.Ass.TransformTag.Accel.get -> double?
+SubtitleToolkit.Formats.Ass.TransformTag.Accel.init -> void
+SubtitleToolkit.Formats.Ass.TransformTag.NestedTags.get -> System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Formats.Ass.AssTag!>?
+SubtitleToolkit.Formats.Ass.TransformTag.NestedTags.init -> void
+SubtitleToolkit.Formats.Ass.TransformTag.RawArgs.get -> string!
+SubtitleToolkit.Formats.Ass.TransformTag.RawArgs.init -> void
+SubtitleToolkit.Formats.Ass.TransformTag.T1.get -> int?
+SubtitleToolkit.Formats.Ass.TransformTag.T1.init -> void
+SubtitleToolkit.Formats.Ass.TransformTag.T2.get -> int?
+SubtitleToolkit.Formats.Ass.TransformTag.T2.init -> void
+SubtitleToolkit.Formats.Ass.TransformTag.TransformTag(string! RawArgs, int? T1 = null, int? T2 = null, double? Accel = null, System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Formats.Ass.AssTag!>? NestedTags = null) -> void
+SubtitleToolkit.Formats.Ass.UnderlineTag
+SubtitleToolkit.Formats.Ass.UnderlineTag.Enabled.get -> bool
+SubtitleToolkit.Formats.Ass.UnderlineTag.Enabled.init -> void
+SubtitleToolkit.Formats.Ass.UnderlineTag.UnderlineTag(bool Enabled) -> void
+SubtitleToolkit.Formats.Ass.UnknownTag
+SubtitleToolkit.Formats.Ass.UnknownTag.RawArgs.get -> string!
+SubtitleToolkit.Formats.Ass.UnknownTag.RawArgs.init -> void
+SubtitleToolkit.Formats.Ass.UnknownTag.TagName.get -> string!
+SubtitleToolkit.Formats.Ass.UnknownTag.TagName.init -> void
+SubtitleToolkit.Formats.Ass.UnknownTag.UnknownTag(string! TagName, string! RawArgs) -> void
+SubtitleToolkit.Formats.AssHandler
+SubtitleToolkit.Formats.AssHandler.AssHandler() -> void
+SubtitleToolkit.Formats.AssHandler.Parse(string! content, SubtitleToolkit.IO.SubtitleReadOptions! options) -> SubtitleToolkit.Diagnostics.ParseResult!
+SubtitleToolkit.Formats.AssHandler.Write(SubtitleToolkit.Model.SubtitleDocument! doc, System.IO.TextWriter! writer, SubtitleToolkit.IO.SubtitleWriteOptions! options) -> void
+SubtitleToolkit.Formats.AssTagToken
+SubtitleToolkit.Formats.AssTagToken.AssTagToken() -> void
+SubtitleToolkit.Formats.AssTagToken.AssTagToken(string! name, string! rawArgs) -> void
+SubtitleToolkit.Formats.AssTagToken.Equals(SubtitleToolkit.Formats.AssTagToken other) -> bool
+SubtitleToolkit.Formats.AssTagToken.IsTag.get -> bool
+SubtitleToolkit.Formats.AssTagToken.Name.get -> string!
+SubtitleToolkit.Formats.AssTagToken.RawArgs.get -> string!
+SubtitleToolkit.Formats.AssTagToken.TrimmedArgs.get -> string!
+SubtitleToolkit.Formats.AssTagTokenizer
+SubtitleToolkit.Formats.FormatDetector
+SubtitleToolkit.Formats.ISubtitleHandler
+SubtitleToolkit.Formats.ISubtitleHandler.Format.get -> SubtitleToolkit.Model.SubtitleFormat
+SubtitleToolkit.Formats.ISubtitleHandler.Parse(string! content, SubtitleToolkit.IO.SubtitleReadOptions! options) -> SubtitleToolkit.Diagnostics.ParseResult!
+SubtitleToolkit.Formats.ISubtitleHandler.Write(SubtitleToolkit.Model.SubtitleDocument! doc, System.IO.TextWriter! writer, SubtitleToolkit.IO.SubtitleWriteOptions! options) -> void
+SubtitleToolkit.Formats.SrtHandler
+SubtitleToolkit.Formats.SrtHandler.Format.get -> SubtitleToolkit.Model.SubtitleFormat
+SubtitleToolkit.Formats.SrtHandler.Parse(string! content, SubtitleToolkit.IO.SubtitleReadOptions! options) -> SubtitleToolkit.Diagnostics.ParseResult!
+SubtitleToolkit.Formats.SrtHandler.SrtHandler() -> void
+SubtitleToolkit.Formats.SrtHandler.Write(SubtitleToolkit.Model.SubtitleDocument! doc, System.IO.TextWriter! writer, SubtitleToolkit.IO.SubtitleWriteOptions! options) -> void
+SubtitleToolkit.Formats.SsaHandler
+SubtitleToolkit.Formats.SsaHandler.SsaHandler() -> void
+SubtitleToolkit.Formats.VttHandler
+SubtitleToolkit.Formats.VttHandler.Format.get -> SubtitleToolkit.Model.SubtitleFormat
+SubtitleToolkit.Formats.VttHandler.Parse(string! content, SubtitleToolkit.IO.SubtitleReadOptions! options) -> SubtitleToolkit.Diagnostics.ParseResult!
+SubtitleToolkit.Formats.VttHandler.VttHandler() -> void
+SubtitleToolkit.Formats.VttHandler.Write(SubtitleToolkit.Model.SubtitleDocument! doc, System.IO.TextWriter! writer, SubtitleToolkit.IO.SubtitleWriteOptions! options) -> void
+SubtitleToolkit.IO.ParseMode
+SubtitleToolkit.IO.ParseMode.Lenient = 0 -> SubtitleToolkit.IO.ParseMode
+SubtitleToolkit.IO.ParseMode.Strict = 1 -> SubtitleToolkit.IO.ParseMode
+SubtitleToolkit.IO.SubtitleEncoding
+SubtitleToolkit.IO.SubtitleReadOptions
+SubtitleToolkit.IO.SubtitleReadOptions.FallbackEncoding.get -> System.Text.Encoding?
+SubtitleToolkit.IO.SubtitleReadOptions.FallbackEncoding.set -> void
+SubtitleToolkit.IO.SubtitleReadOptions.Format.get -> SubtitleToolkit.Model.SubtitleFormat?
+SubtitleToolkit.IO.SubtitleReadOptions.Format.set -> void
+SubtitleToolkit.IO.SubtitleReadOptions.Mode.get -> SubtitleToolkit.IO.ParseMode
+SubtitleToolkit.IO.SubtitleReadOptions.Mode.set -> void
+SubtitleToolkit.IO.SubtitleReadOptions.SubtitleReadOptions() -> void
+SubtitleToolkit.IO.SubtitleWriteOptions
+SubtitleToolkit.IO.SubtitleWriteOptions.EmitBom.get -> bool
+SubtitleToolkit.IO.SubtitleWriteOptions.EmitBom.set -> void
+SubtitleToolkit.IO.SubtitleWriteOptions.Encoding.get -> System.Text.Encoding?
+SubtitleToolkit.IO.SubtitleWriteOptions.Encoding.set -> void
+SubtitleToolkit.IO.SubtitleWriteOptions.LineEnding.get -> string!
+SubtitleToolkit.IO.SubtitleWriteOptions.LineEnding.set -> void
+SubtitleToolkit.IO.SubtitleWriteOptions.SubtitleWriteOptions() -> void
+SubtitleToolkit.Model.FormatData.AssCueData
+SubtitleToolkit.Model.FormatData.AssCueData.ActorName.get -> string!
+SubtitleToolkit.Model.FormatData.AssCueData.ActorName.set -> void
+SubtitleToolkit.Model.FormatData.AssCueData.AssCueData() -> void
+SubtitleToolkit.Model.FormatData.AssCueData.Effect.get -> string!
+SubtitleToolkit.Model.FormatData.AssCueData.Effect.set -> void
+SubtitleToolkit.Model.FormatData.AssCueData.Equals(SubtitleToolkit.Model.FormatData.AssCueData? other) -> bool
+SubtitleToolkit.Model.FormatData.AssCueData.EventType.get -> SubtitleToolkit.Model.FormatData.AssEventType
+SubtitleToolkit.Model.FormatData.AssCueData.EventType.set -> void
+SubtitleToolkit.Model.FormatData.AssCueData.IsSsa.get -> bool
+SubtitleToolkit.Model.FormatData.AssCueData.IsSsa.set -> void
+SubtitleToolkit.Model.FormatData.AssCueData.Layer.get -> int
+SubtitleToolkit.Model.FormatData.AssCueData.Layer.set -> void
+SubtitleToolkit.Model.FormatData.AssCueData.MarginL.get -> int
+SubtitleToolkit.Model.FormatData.AssCueData.MarginL.set -> void
+SubtitleToolkit.Model.FormatData.AssCueData.MarginR.get -> int
+SubtitleToolkit.Model.FormatData.AssCueData.MarginR.set -> void
+SubtitleToolkit.Model.FormatData.AssCueData.MarginV.get -> int
+SubtitleToolkit.Model.FormatData.AssCueData.MarginV.set -> void
+SubtitleToolkit.Model.FormatData.AssCueData.Marked.get -> bool
+SubtitleToolkit.Model.FormatData.AssCueData.Marked.set -> void
+SubtitleToolkit.Model.FormatData.AssCueData.StyleName.get -> string!
+SubtitleToolkit.Model.FormatData.AssCueData.StyleName.set -> void
+SubtitleToolkit.Model.FormatData.AssDocumentData
+SubtitleToolkit.Model.FormatData.AssDocumentData.AssDocumentData(System.Collections.Generic.IDictionary<string!, string!>? scriptInfo = null, System.Collections.Generic.IEnumerable<SubtitleToolkit.Model.FormatData.AssStyle!>? styles = null, System.Collections.Generic.IEnumerable<SubtitleToolkit.Model.FormatData.RawAssSection!>? unknownSections = null, bool isSsa = false) -> void
+SubtitleToolkit.Model.FormatData.AssDocumentData.Equals(SubtitleToolkit.Model.FormatData.AssDocumentData? other) -> bool
+SubtitleToolkit.Model.FormatData.AssDocumentData.EventsFormatOrder.get -> string?
+SubtitleToolkit.Model.FormatData.AssDocumentData.EventsFormatOrder.set -> void
+SubtitleToolkit.Model.FormatData.AssDocumentData.IsSsa.get -> bool
+SubtitleToolkit.Model.FormatData.AssDocumentData.IsSsa.set -> void
+SubtitleToolkit.Model.FormatData.AssDocumentData.ScriptInfo.get -> System.Collections.Generic.IReadOnlyDictionary<string!, string!>!
+SubtitleToolkit.Model.FormatData.AssDocumentData.Styles.get -> System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Model.FormatData.AssStyle!>!
+SubtitleToolkit.Model.FormatData.AssDocumentData.StylesFormatOrder.get -> string?
+SubtitleToolkit.Model.FormatData.AssDocumentData.StylesFormatOrder.set -> void
+SubtitleToolkit.Model.FormatData.AssDocumentData.UnknownSections.get -> System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Model.FormatData.RawAssSection!>!
+SubtitleToolkit.Model.FormatData.AssEventType
+SubtitleToolkit.Model.FormatData.AssEventType.Command = 5 -> SubtitleToolkit.Model.FormatData.AssEventType
+SubtitleToolkit.Model.FormatData.AssEventType.Comment = 1 -> SubtitleToolkit.Model.FormatData.AssEventType
+SubtitleToolkit.Model.FormatData.AssEventType.Dialogue = 0 -> SubtitleToolkit.Model.FormatData.AssEventType
+SubtitleToolkit.Model.FormatData.AssEventType.Movie = 4 -> SubtitleToolkit.Model.FormatData.AssEventType
+SubtitleToolkit.Model.FormatData.AssEventType.Picture = 2 -> SubtitleToolkit.Model.FormatData.AssEventType
+SubtitleToolkit.Model.FormatData.AssEventType.Sound = 3 -> SubtitleToolkit.Model.FormatData.AssEventType
+SubtitleToolkit.Model.FormatData.AssStyle
+SubtitleToolkit.Model.FormatData.AssStyle.Alignment.get -> int
+SubtitleToolkit.Model.FormatData.AssStyle.Alignment.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.Angle.get -> double
+SubtitleToolkit.Model.FormatData.AssStyle.Angle.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.AssStyle() -> void
+SubtitleToolkit.Model.FormatData.AssStyle.BackColour.get -> string!
+SubtitleToolkit.Model.FormatData.AssStyle.BackColour.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.Bold.get -> bool
+SubtitleToolkit.Model.FormatData.AssStyle.Bold.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.BorderStyle.get -> int
+SubtitleToolkit.Model.FormatData.AssStyle.BorderStyle.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.Encoding.get -> int
+SubtitleToolkit.Model.FormatData.AssStyle.Encoding.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.Equals(SubtitleToolkit.Model.FormatData.AssStyle? other) -> bool
+SubtitleToolkit.Model.FormatData.AssStyle.FontName.get -> string!
+SubtitleToolkit.Model.FormatData.AssStyle.FontName.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.FontSize.get -> double
+SubtitleToolkit.Model.FormatData.AssStyle.FontSize.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.Italic.get -> bool
+SubtitleToolkit.Model.FormatData.AssStyle.Italic.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.MarginL.get -> int
+SubtitleToolkit.Model.FormatData.AssStyle.MarginL.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.MarginR.get -> int
+SubtitleToolkit.Model.FormatData.AssStyle.MarginR.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.MarginV.get -> int
+SubtitleToolkit.Model.FormatData.AssStyle.MarginV.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.Name.get -> string!
+SubtitleToolkit.Model.FormatData.AssStyle.Name.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.Outline.get -> double
+SubtitleToolkit.Model.FormatData.AssStyle.Outline.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.OutlineColour.get -> string!
+SubtitleToolkit.Model.FormatData.AssStyle.OutlineColour.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.PrimaryColour.get -> string!
+SubtitleToolkit.Model.FormatData.AssStyle.PrimaryColour.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.RawLine.get -> string?
+SubtitleToolkit.Model.FormatData.AssStyle.RawLine.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.ScaleX.get -> double
+SubtitleToolkit.Model.FormatData.AssStyle.ScaleX.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.ScaleY.get -> double
+SubtitleToolkit.Model.FormatData.AssStyle.ScaleY.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.SecondaryColour.get -> string!
+SubtitleToolkit.Model.FormatData.AssStyle.SecondaryColour.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.Shadow.get -> double
+SubtitleToolkit.Model.FormatData.AssStyle.Shadow.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.Spacing.get -> double
+SubtitleToolkit.Model.FormatData.AssStyle.Spacing.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.StrikeOut.get -> bool
+SubtitleToolkit.Model.FormatData.AssStyle.StrikeOut.set -> void
+SubtitleToolkit.Model.FormatData.AssStyle.Underline.get -> bool
+SubtitleToolkit.Model.FormatData.AssStyle.Underline.set -> void
+SubtitleToolkit.Model.FormatData.CueFormatData
+SubtitleToolkit.Model.FormatData.CueFormatData.CueFormatData() -> void
+SubtitleToolkit.Model.FormatData.DocumentFormatData
+SubtitleToolkit.Model.FormatData.DocumentFormatData.DocumentFormatData() -> void
+SubtitleToolkit.Model.FormatData.RawAssSection
+SubtitleToolkit.Model.FormatData.RawAssSection.Content.get -> string!
+SubtitleToolkit.Model.FormatData.RawAssSection.Equals(SubtitleToolkit.Model.FormatData.RawAssSection? other) -> bool
+SubtitleToolkit.Model.FormatData.RawAssSection.RawAssSection(string! sectionName, string! content) -> void
+SubtitleToolkit.Model.FormatData.RawAssSection.SectionName.get -> string!
+SubtitleToolkit.Model.FormatData.SrtCueData
+SubtitleToolkit.Model.FormatData.SrtCueData.Coordinates.get -> string?
+SubtitleToolkit.Model.FormatData.SrtCueData.Coordinates.set -> void
+SubtitleToolkit.Model.FormatData.SrtCueData.Equals(SubtitleToolkit.Model.FormatData.SrtCueData? other) -> bool
+SubtitleToolkit.Model.FormatData.SrtCueData.OriginalIndex.get -> int?
+SubtitleToolkit.Model.FormatData.SrtCueData.OriginalIndex.set -> void
+SubtitleToolkit.Model.FormatData.SrtCueData.SrtCueData(int? originalIndex = null, string? coordinates = null) -> void
+SubtitleToolkit.Model.FormatData.VttAlignment
+SubtitleToolkit.Model.FormatData.VttAlignment.Center = 1 -> SubtitleToolkit.Model.FormatData.VttAlignment
+SubtitleToolkit.Model.FormatData.VttAlignment.End = 2 -> SubtitleToolkit.Model.FormatData.VttAlignment
+SubtitleToolkit.Model.FormatData.VttAlignment.Left = 3 -> SubtitleToolkit.Model.FormatData.VttAlignment
+SubtitleToolkit.Model.FormatData.VttAlignment.Right = 4 -> SubtitleToolkit.Model.FormatData.VttAlignment
+SubtitleToolkit.Model.FormatData.VttAlignment.Start = 0 -> SubtitleToolkit.Model.FormatData.VttAlignment
+SubtitleToolkit.Model.FormatData.VttAnchoredBlock
+SubtitleToolkit.Model.FormatData.VttAnchoredBlock.BeforeCueIndex.get -> int
+SubtitleToolkit.Model.FormatData.VttAnchoredBlock.Content.get -> string!
+SubtitleToolkit.Model.FormatData.VttAnchoredBlock.Equals(SubtitleToolkit.Model.FormatData.VttAnchoredBlock? other) -> bool
+SubtitleToolkit.Model.FormatData.VttAnchoredBlock.Kind.get -> SubtitleToolkit.Model.FormatData.VttBlockKind
+SubtitleToolkit.Model.FormatData.VttAnchoredBlock.VttAnchoredBlock(int beforeCueIndex, SubtitleToolkit.Model.FormatData.VttBlockKind kind, string! content) -> void
+SubtitleToolkit.Model.FormatData.VttBlockKind
+SubtitleToolkit.Model.FormatData.VttBlockKind.Note = 0 -> SubtitleToolkit.Model.FormatData.VttBlockKind
+SubtitleToolkit.Model.FormatData.VttBlockKind.Region = 2 -> SubtitleToolkit.Model.FormatData.VttBlockKind
+SubtitleToolkit.Model.FormatData.VttBlockKind.Style = 1 -> SubtitleToolkit.Model.FormatData.VttBlockKind
+SubtitleToolkit.Model.FormatData.VttCueData
+SubtitleToolkit.Model.FormatData.VttCueData.Equals(SubtitleToolkit.Model.FormatData.VttCueData? other) -> bool
+SubtitleToolkit.Model.FormatData.VttCueData.Identifier.get -> string?
+SubtitleToolkit.Model.FormatData.VttCueData.Identifier.set -> void
+SubtitleToolkit.Model.FormatData.VttCueData.RawSettings.get -> string!
+SubtitleToolkit.Model.FormatData.VttCueData.RawSettings.set -> void
+SubtitleToolkit.Model.FormatData.VttCueData.Settings.get -> SubtitleToolkit.Model.FormatData.VttCueSettings!
+SubtitleToolkit.Model.FormatData.VttCueData.Settings.set -> void
+SubtitleToolkit.Model.FormatData.VttCueData.VttCueData(string? identifier = null, string? rawSettings = null, SubtitleToolkit.Model.FormatData.VttCueSettings? settings = null) -> void
+SubtitleToolkit.Model.FormatData.VttCueSettings
+SubtitleToolkit.Model.FormatData.VttCueSettings.Align.get -> SubtitleToolkit.Model.FormatData.VttAlignment?
+SubtitleToolkit.Model.FormatData.VttCueSettings.Align.set -> void
+SubtitleToolkit.Model.FormatData.VttCueSettings.Equals(SubtitleToolkit.Model.FormatData.VttCueSettings? other) -> bool
+SubtitleToolkit.Model.FormatData.VttCueSettings.Line.get -> SubtitleToolkit.Model.FormatData.VttLineSetting?
+SubtitleToolkit.Model.FormatData.VttCueSettings.Line.set -> void
+SubtitleToolkit.Model.FormatData.VttCueSettings.Position.get -> SubtitleToolkit.Model.FormatData.VttPositionSetting?
+SubtitleToolkit.Model.FormatData.VttCueSettings.Position.set -> void
+SubtitleToolkit.Model.FormatData.VttCueSettings.Region.get -> string?
+SubtitleToolkit.Model.FormatData.VttCueSettings.Region.set -> void
+SubtitleToolkit.Model.FormatData.VttCueSettings.Size.get -> double?
+SubtitleToolkit.Model.FormatData.VttCueSettings.Size.set -> void
+SubtitleToolkit.Model.FormatData.VttCueSettings.ToSettingsString() -> string!
+SubtitleToolkit.Model.FormatData.VttCueSettings.UnknownSettings.get -> System.Collections.Generic.IReadOnlyDictionary<string!, string!>!
+SubtitleToolkit.Model.FormatData.VttCueSettings.Vertical.get -> SubtitleToolkit.Model.FormatData.VttVertical?
+SubtitleToolkit.Model.FormatData.VttCueSettings.Vertical.set -> void
+SubtitleToolkit.Model.FormatData.VttCueSettings.VttCueSettings(string? region = null, SubtitleToolkit.Model.FormatData.VttLineSetting? line = null, SubtitleToolkit.Model.FormatData.VttPositionSetting? position = null, double? size = null, SubtitleToolkit.Model.FormatData.VttAlignment? align = null, SubtitleToolkit.Model.FormatData.VttVertical? vertical = null, System.Collections.Generic.IDictionary<string!, string!>? unknownSettings = null) -> void
+SubtitleToolkit.Model.FormatData.VttDocumentData
+SubtitleToolkit.Model.FormatData.VttDocumentData.Equals(SubtitleToolkit.Model.FormatData.VttDocumentData? other) -> bool
+SubtitleToolkit.Model.FormatData.VttDocumentData.HeaderComment.get -> string?
+SubtitleToolkit.Model.FormatData.VttDocumentData.NonCueBlocks.get -> System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Model.FormatData.VttAnchoredBlock!>!
+SubtitleToolkit.Model.FormatData.VttDocumentData.TimestampMap.get -> string?
+SubtitleToolkit.Model.FormatData.VttDocumentData.VttDocumentData(string? headerComment = null, string? timestampMap = null, System.Collections.Generic.IEnumerable<SubtitleToolkit.Model.FormatData.VttAnchoredBlock!>? nonCueBlocks = null) -> void
+SubtitleToolkit.Model.FormatData.VttLineAlign
+SubtitleToolkit.Model.FormatData.VttLineAlign.Center = 1 -> SubtitleToolkit.Model.FormatData.VttLineAlign
+SubtitleToolkit.Model.FormatData.VttLineAlign.End = 2 -> SubtitleToolkit.Model.FormatData.VttLineAlign
+SubtitleToolkit.Model.FormatData.VttLineAlign.Start = 0 -> SubtitleToolkit.Model.FormatData.VttLineAlign
+SubtitleToolkit.Model.FormatData.VttLineSetting
+SubtitleToolkit.Model.FormatData.VttLineSetting.Alignment.get -> SubtitleToolkit.Model.FormatData.VttLineAlign?
+SubtitleToolkit.Model.FormatData.VttLineSetting.Alignment.set -> void
+SubtitleToolkit.Model.FormatData.VttLineSetting.Equals(SubtitleToolkit.Model.FormatData.VttLineSetting? other) -> bool
+SubtitleToolkit.Model.FormatData.VttLineSetting.IsPercentage.get -> bool
+SubtitleToolkit.Model.FormatData.VttLineSetting.IsPercentage.set -> void
+SubtitleToolkit.Model.FormatData.VttLineSetting.Value.get -> double
+SubtitleToolkit.Model.FormatData.VttLineSetting.Value.set -> void
+SubtitleToolkit.Model.FormatData.VttLineSetting.VttLineSetting() -> void
+SubtitleToolkit.Model.FormatData.VttPositionAlign
+SubtitleToolkit.Model.FormatData.VttPositionAlign.Auto = 3 -> SubtitleToolkit.Model.FormatData.VttPositionAlign
+SubtitleToolkit.Model.FormatData.VttPositionAlign.Center = 1 -> SubtitleToolkit.Model.FormatData.VttPositionAlign
+SubtitleToolkit.Model.FormatData.VttPositionAlign.LineLeft = 0 -> SubtitleToolkit.Model.FormatData.VttPositionAlign
+SubtitleToolkit.Model.FormatData.VttPositionAlign.LineRight = 2 -> SubtitleToolkit.Model.FormatData.VttPositionAlign
+SubtitleToolkit.Model.FormatData.VttPositionSetting
+SubtitleToolkit.Model.FormatData.VttPositionSetting.Alignment.get -> SubtitleToolkit.Model.FormatData.VttPositionAlign?
+SubtitleToolkit.Model.FormatData.VttPositionSetting.Alignment.set -> void
+SubtitleToolkit.Model.FormatData.VttPositionSetting.Equals(SubtitleToolkit.Model.FormatData.VttPositionSetting? other) -> bool
+SubtitleToolkit.Model.FormatData.VttPositionSetting.Percentage.get -> double
+SubtitleToolkit.Model.FormatData.VttPositionSetting.Percentage.set -> void
+SubtitleToolkit.Model.FormatData.VttPositionSetting.VttPositionSetting() -> void
+SubtitleToolkit.Model.FormatData.VttVertical
+SubtitleToolkit.Model.FormatData.VttVertical.LeftToRight = 1 -> SubtitleToolkit.Model.FormatData.VttVertical
+SubtitleToolkit.Model.FormatData.VttVertical.RightToLeft = 0 -> SubtitleToolkit.Model.FormatData.VttVertical
+SubtitleToolkit.Model.SubtitleCue
+SubtitleToolkit.Model.SubtitleCue.Duration.get -> System.TimeSpan
+SubtitleToolkit.Model.SubtitleCue.End.get -> System.TimeSpan
+SubtitleToolkit.Model.SubtitleCue.Equals(SubtitleToolkit.Model.SubtitleCue? other) -> bool
+SubtitleToolkit.Model.SubtitleCue.FormatData.get -> SubtitleToolkit.Model.FormatData.CueFormatData?
+SubtitleToolkit.Model.SubtitleCue.PlainText.get -> string!
+SubtitleToolkit.Model.SubtitleCue.RawText.get -> string!
+SubtitleToolkit.Model.SubtitleCue.Start.get -> System.TimeSpan
+SubtitleToolkit.Model.SubtitleCue.SubtitleCue(System.TimeSpan start, System.TimeSpan end, string! rawText, SubtitleToolkit.Model.FormatData.CueFormatData? formatData = null) -> void
+SubtitleToolkit.Model.SubtitleCue.TimeShift(System.TimeSpan offset, bool clampNegativeToZero = true) -> SubtitleToolkit.Model.SubtitleCue!
+SubtitleToolkit.Model.SubtitleCue.WithText(string! newRawText) -> SubtitleToolkit.Model.SubtitleCue!
+SubtitleToolkit.Model.SubtitleCue.WithTimes(System.TimeSpan newStart, System.TimeSpan newEnd) -> SubtitleToolkit.Model.SubtitleCue!
+SubtitleToolkit.Model.SubtitleDocument
+SubtitleToolkit.Model.SubtitleDocument.Convert(SubtitleToolkit.Model.SubtitleFormat targetFormat, SubtitleToolkit.Diagnostics.ConversionOptions? options = null) -> SubtitleToolkit.Diagnostics.ConversionResult!
+SubtitleToolkit.Model.SubtitleDocument.Cues.get -> System.Collections.Generic.IReadOnlyList<SubtitleToolkit.Model.SubtitleCue!>!
+SubtitleToolkit.Model.SubtitleDocument.Equals(SubtitleToolkit.Model.SubtitleDocument? other) -> bool
+SubtitleToolkit.Model.SubtitleDocument.Format.get -> SubtitleToolkit.Model.SubtitleFormat
+SubtitleToolkit.Model.SubtitleDocument.FormatData.get -> SubtitleToolkit.Model.FormatData.DocumentFormatData?
+SubtitleToolkit.Model.SubtitleDocument.Save(string! path, SubtitleToolkit.IO.SubtitleWriteOptions? options = null) -> void
+SubtitleToolkit.Model.SubtitleDocument.Save(System.IO.Stream! stream, SubtitleToolkit.IO.SubtitleWriteOptions? options = null) -> void
+SubtitleToolkit.Model.SubtitleDocument.SaveAsync(string! path, SubtitleToolkit.IO.SubtitleWriteOptions? options = null, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+SubtitleToolkit.Model.SubtitleDocument.SaveAsync(System.IO.Stream! stream, SubtitleToolkit.IO.SubtitleWriteOptions? options = null, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+SubtitleToolkit.Model.SubtitleDocument.SubtitleDocument(SubtitleToolkit.Model.SubtitleFormat format, System.Collections.Generic.IEnumerable<SubtitleToolkit.Model.SubtitleCue!>! cues, SubtitleToolkit.Model.FormatData.DocumentFormatData? formatData = null) -> void
+SubtitleToolkit.Model.SubtitleDocument.TimeShift(System.TimeSpan offset, SubtitleToolkit.TimeShiftOptions? options = null) -> SubtitleToolkit.Model.SubtitleDocument!
+SubtitleToolkit.Model.SubtitleFormat
+SubtitleToolkit.Model.SubtitleFormat.Ass = 2 -> SubtitleToolkit.Model.SubtitleFormat
+SubtitleToolkit.Model.SubtitleFormat.Ssa = 3 -> SubtitleToolkit.Model.SubtitleFormat
+SubtitleToolkit.Model.SubtitleFormat.SubRip = 0 -> SubtitleToolkit.Model.SubtitleFormat
+SubtitleToolkit.Model.SubtitleFormat.WebVtt = 1 -> SubtitleToolkit.Model.SubtitleFormat
+SubtitleToolkit.Subtitle
+SubtitleToolkit.TimeShifter
+SubtitleToolkit.TimeShiftOptions
+SubtitleToolkit.TimeShiftOptions.ClampNegativeToZero.get -> bool
+SubtitleToolkit.TimeShiftOptions.ClampNegativeToZero.set -> void
+SubtitleToolkit.TimeShiftOptions.DropNegativeCues.get -> bool
+SubtitleToolkit.TimeShiftOptions.DropNegativeCues.set -> void
+SubtitleToolkit.TimeShiftOptions.Filter.get -> System.Func<SubtitleToolkit.Model.SubtitleCue!, bool>?
+SubtitleToolkit.TimeShiftOptions.Filter.set -> void
+SubtitleToolkit.TimeShiftOptions.TimeShiftOptions() -> void
+virtual SubtitleToolkit.Formats.AssHandler.Format.get -> SubtitleToolkit.Model.SubtitleFormat
+virtual SubtitleToolkit.Formats.AssHandler.IsSsa.get -> bool

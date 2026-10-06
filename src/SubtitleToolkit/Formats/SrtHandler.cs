@@ -55,7 +55,7 @@ public sealed class SrtHandler : ISubtitleHandler
                 timestampLine = lines[lineIndex].Trim();
             }
 
-            if (string.IsNullOrEmpty(timestampLine) || !timestampLine.Contains("-->"))
+            if (string.IsNullOrEmpty(timestampLine) || timestampLine == null || !timestampLine.Contains("-->"))
             {
                 var msg = $"Expected timestamp line with '-->' at line {cueStartLine}. Found: '{timestampLine}'";
                 if (options.Mode == ParseMode.Strict)

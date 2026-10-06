@@ -61,9 +61,9 @@
 - `UnknownTag(string Raw)` fallback ensuring 100% round-trip preservation of custom or Aegisub extensions.
 - `AssTagParser` parsing AST from dialogue string and rendering back to dialogue string verbatim or transformed.
 
-### Milestone v1.0: Stabilization & Release
-- API freeze with `Microsoft.CodeAnalysis.PublicApiAnalyzers`.
-- Package validation with `EnablePackageValidation`.
-- Synthetic and permissively licensed test corpus.
-- FsCheck property tests: `Parse(Write(doc)) == doc`.
-- Documentation & benchmarks comparing memory and correctness against `libse` and `SubtitlesParser`.
+### Milestone v1.0: Stabilization & Release [DONE]
+- API freeze with `Microsoft.CodeAnalysis.PublicApiAnalyzers` (`PublicAPI.Shipped.txt`).
+- Package validation with `EnablePackageValidation` across `netstandard2.0;net8.0`.
+- Synthetic and permissively licensed test corpus (`tests/SubtitleToolkit.Tests/Corpus/`).
+- Property round-trip tests: `Parse(Write(doc)) == doc` (`PropertyRoundTripTests.cs`).
+- Documentation & benchmarks comparing memory and correctness against `libse` and `SubtitlesParser` (`README.md`).

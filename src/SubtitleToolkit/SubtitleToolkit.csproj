@@ -4,7 +4,7 @@
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <PackageId>SubtitleToolkit</PackageId>
-    <Version>0.4.0-preview</Version>
+    <Version>1.0.0</Version>
     <Authors>SubtitleToolkit Contributors</Authors>
     <Description>Lightweight, zero-dependency .NET library for parsing, converting, and time-shifting SRT, WebVTT, ASS, and SSA subtitles.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -14,7 +14,18 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <EnablePackageValidation>true</EnablePackageValidation>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <NoWarn>$(NoWarn);1591;RS0026;RS0027</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
+  </ItemGroup>
 
   <!-- Build-time polyfills and analyzers only: does not flow to package consumers -->
   <ItemGroup>

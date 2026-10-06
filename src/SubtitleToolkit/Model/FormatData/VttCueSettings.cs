@@ -143,7 +143,7 @@ public sealed class VttCueSettings : IEquatable<VttCueSettings>
         VttVertical? vertical = null;
         var unknowns = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
-        var tokens = settingsString.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+        var tokens = settingsString!.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
         foreach (var token in tokens)
         {
             var colonIdx = token.IndexOf(':');
