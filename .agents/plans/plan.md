@@ -56,9 +56,10 @@
   - ASS `\pos` / `\an` conversion to VTT cue settings.
   - Stale format bag stripping.
 
-### Milestone v0.4: Sealed Record ASS Tag AST
-- Typed AST: `AssTag` base record with sealed subtypes (`BoldTag`, `ItalicTag`, `ColorTag`, `PosTag`, `MoveTag`, `FadeTag`, `KaraokeTag`, `DrawingTag`).
+### Milestone v0.4: Sealed Record ASS Tag AST [DONE]
+- Typed AST: `AssTag` base record with sealed subtypes (`BoldTag`, `ItalicTag`, `ColorTag`, `PosTag`, `MoveTag`, `OrgTag`, `FadeTag`, `KaraokeTag`, `DrawingTag`, `AlignmentTag`, `FontSizeTag`, etc.).
 - `UnknownTag(string Raw)` fallback ensuring 100% round-trip preservation of custom or Aegisub extensions.
+- `AssTagParser` parsing AST from dialogue string and rendering back to dialogue string verbatim or transformed.
 
 ### Milestone v1.0: Stabilization & Release
 - API freeze with `Microsoft.CodeAnalysis.PublicApiAnalyzers`.
