@@ -1,0 +1,12 @@
+bin/
+obj/
+*.user
+*.suo
+.vs/
+.idea/
+TestResults/
+*.snupkg
+*.nupkg
+
+# Local private corpora (never commit copyrighted files)
+tests/Corpora/Local/
