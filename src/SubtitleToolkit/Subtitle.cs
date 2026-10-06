@@ -188,6 +188,15 @@ public static class Subtitle
         return writer.ToString();
     }
 
+    /// <summary>
+    /// Shifts cues in the subtitle document by the specified offset.
+    /// </summary>
+    public static SubtitleDocument TimeShift(SubtitleDocument doc, TimeSpan offset, TimeShiftOptions? options = null)
+    {
+        if (doc == null) throw new ArgumentNullException(nameof(doc));
+        return doc.TimeShift(offset, options);
+    }
+
     private static void ValidateSaveFormat(SubtitleDocument doc, SubtitleFormat targetFormat)
     {
         if (doc.Format != targetFormat)

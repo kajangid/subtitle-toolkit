@@ -64,6 +64,12 @@ public sealed class SubtitleDocument : IEquatable<SubtitleDocument>
     public Task SaveAsync(Stream stream, SubtitleWriteOptions? options = null, CancellationToken ct = default)
         => Subtitle.SaveAsync(this, stream, Format, options, ct);
 
+    /// <summary>
+    /// Shifts cues in this document by the specified offset.
+    /// </summary>
+    public SubtitleDocument TimeShift(TimeSpan offset, TimeShiftOptions? options = null)
+        => TimeShifter.Shift(this, offset, options);
+
     /// <inheritdoc/>
     public bool Equals(SubtitleDocument? other)
     {

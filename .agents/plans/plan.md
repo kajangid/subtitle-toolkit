@@ -35,7 +35,7 @@
   - `ParseResult` with `IReadOnlyList<ParseDiagnostic>` and implicit conversion to `SubtitleDocument`.
   - Lenient vs Strict modes.
 
-### Milestone v0.2: Time-Shifting & Lossless ASS Tag Tokenizer
+### Milestone v0.2: Time-Shifting & Lossless ASS Tag Tokenizer [DONE]
 - **TimeShifter**:
   - Offset addition/subtraction.
   - Options: `ClampNegativeToZero` (default true), `DropNegativeCues`, selective `Filter`.

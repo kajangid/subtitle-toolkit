@@ -59,6 +59,21 @@ public sealed class SubtitleCue : IEquatable<SubtitleCue>
     public SubtitleCue WithText(string newRawText)
         => new(Start, End, newRawText, FormatData);
 
+    /// <summary>
+    /// Creates a copy of this cue shifted by the specified offset.
+    /// </summary>
+    public SubtitleCue TimeShift(TimeSpan offset, bool clampNegativeToZero = true)
+    {
+        var newStart = Start + offset;
+        var newEnd = End + offset;
+        if (clampNegativeToZero)
+        {
+            if (newStart < TimeSpan.Zero) newStart = TimeSpan.Zero;
+            if (newEnd < TimeSpan.Zero) newEnd = TimeSpan.Zero;
+        }
+        return WithTimes(newStart, newEnd);
+    }
+
     /// <inheritdoc/>
     public bool Equals(SubtitleCue? other)
     {
