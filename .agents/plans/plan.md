@@ -45,7 +45,7 @@
   - Low-level lossless tokenizer splitting `{\...}` blocks into `(string Name, string RawArgs)` pairs.
   - Verbatim round-trip capability without regex data loss.
 
-### Milestone v0.3: Format Conversion Engine & Coordinate Mapping
+### Milestone v0.3: Format Conversion Engine & Coordinate Mapping [DONE]
 - **Conversion Engine**:
   - `Subtitle.Convert(doc, targetFormat, options) -> ConversionResult`.
   - `ConversionReport`: structured list of `ConversionNotice` (Severity, Code, CueIndex, FeatureName, Message).

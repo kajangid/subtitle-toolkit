@@ -70,6 +70,12 @@ public sealed class SubtitleDocument : IEquatable<SubtitleDocument>
     public SubtitleDocument TimeShift(TimeSpan offset, TimeShiftOptions? options = null)
         => TimeShifter.Shift(this, offset, options);
 
+    /// <summary>
+    /// Converts this subtitle document to the specified target format with structured loss reporting.
+    /// </summary>
+    public Diagnostics.ConversionResult Convert(SubtitleFormat targetFormat, Diagnostics.ConversionOptions? options = null)
+        => Subtitle.Convert(this, targetFormat, options);
+
     /// <inheritdoc/>
     public bool Equals(SubtitleDocument? other)
     {

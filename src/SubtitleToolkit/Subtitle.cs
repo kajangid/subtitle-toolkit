@@ -197,6 +197,15 @@ public static class Subtitle
         return doc.TimeShift(offset, options);
     }
 
+    /// <summary>
+    /// Converts a subtitle document to a target format with structured loss reporting.
+    /// </summary>
+    public static ConversionResult Convert(SubtitleDocument doc, SubtitleFormat targetFormat, ConversionOptions? options = null)
+    {
+        if (doc == null) throw new ArgumentNullException(nameof(doc));
+        return SubtitleToolkit.Common.SubtitleConverter.Convert(doc, targetFormat, options);
+    }
+
     private static void ValidateSaveFormat(SubtitleDocument doc, SubtitleFormat targetFormat)
     {
         if (doc.Format != targetFormat)
