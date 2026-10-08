@@ -164,6 +164,41 @@ doc.Save("output.srt");
 
 ---
 
+## Releasing & CI/CD
+
+### Version Bumping (`./bump.sh`)
+
+Automate Semantic Versioning updates and tag creation using the bundled [`bump.sh`](bump.sh) script:
+
+```bash
+# Bump patch: 1.0.0 -> 1.0.1 (default)
+./bump.sh patch
+
+# Bump minor: 1.0.0 -> 1.1.0 (creates dual tags: v1.1.0 and v1.1)
+./bump.sh minor
+
+# Bump major: 1.0.0 -> 2.0.0 (creates dual tags: v2.0.0 and v2.0)
+./bump.sh major
+
+# Explicit version:
+./bump.sh 1.2.3
+```
+
+- Whenever the patch component is `0` (such as `minor` or `major` releases like `1.1.0`), the script automatically generates **two annotated tags**: the full tag (e.g. `v1.1.0`) and the short tag (e.g. `v1.1`).
+- All tags are generated as **annotated tags**, so pushing both the commit and release tags requires only:
+
+```bash
+git push --follow-tags
+```
+
+### GitHub Actions Workflows
+
+- **CI Pipeline** (`.github/workflows/ci.yml`): Runs on push and pull requests to `master`/`main` to build, run all 69 unit, property, and golden corpus tests, and verify package validation across `netstandard2.0` and `net8.0`.
+- **NuGet Release** (`.github/workflows/release-nuget.yml`): Automatically packs and publishes `.nupkg` and `.snupkg` to **NuGet.org** on tag push (`v*`) using `${{ secrets.NUGET_API_KEY }}`.
+- **GitHub Packages Release** (`.github/workflows/release-github-packages.yml`): Automatically packs and publishes to **GitHub Packages** (`nuget.pkg.github.com`) on tag push (`v*`) using the built-in `${{ secrets.GITHUB_TOKEN }}`.
+
+---
+
 ## License
 
 Licensed under the [MIT License](LICENSE).

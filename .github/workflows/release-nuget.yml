@@ -10,6 +10,9 @@ on:
 jobs:
   publish-nuget:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # Required for NuGet OIDC Trusted Publishing
 
     steps:
       - name: Checkout repository
@@ -29,5 +32,18 @@ jobs:
       - name: Pack SubtitleToolkit
         run: dotnet pack src/SubtitleToolkit/SubtitleToolkit.csproj --configuration Release --no-build -o ./nupkg
 
+      - name: NuGet login (OIDC Trusted Publisher)
+        id: login
+        uses: NuGet/login@v1
+        with:
+          user: ${{ vars.NUGET_USERNAME || 'karanjangid' }}
+
       - name: Publish to NuGet.org
-        run: dotnet nuget push "./nupkg/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        env:
+          RESOLVED_KEY: ${{ steps.login.outputs.NUGET_API_KEY || secrets.NUGET_API_KEY }}
+        run: |
+          if [ -z "$RESOLVED_KEY" ]; then
+            echo "::error::No API key available from NuGet Trusted Publishing (OIDC) or NUGET_API_KEY secret."
+            exit 1
+          fi
+          dotnet nuget push "./nupkg/*.nupkg" --api-key "$RESOLVED_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
