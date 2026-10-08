@@ -164,38 +164,71 @@ doc.Save("output.srt");
 
 ---
 
-## Releasing & CI/CD
+## Documentation
 
-### Version Bumping (`./bump.sh`)
+Comprehensive production documentation is available in the [`docs/`](docs/) directory:
+- [**Features & Developer Guide**](docs/FEATURES.md): Detailed API walkthrough with runnable code examples covering loading, parsing, encoding detection, format bags, time-shifting, coordinate conversions, and ASS AST manipulation.
+- [**Architecture, Design Decisions & Technical Limitations**](docs/ARCHITECTURE.md): System architecture diagrams, Architecture Decision Records (ADRs), performance characteristics, comparative benchmarks, and non-goals.
+- [**Releasing & CI/CD Guide**](docs/RELEASING.md): Version bumping (`./bump.sh`), dual-tagging conventions, and GitHub Actions release pipelines.
 
-Automate Semantic Versioning updates and tag creation using the bundled [`bump.sh`](bump.sh) script:
+---
 
-```bash
-# Bump patch: 1.0.0 -> 1.0.1 (default)
-./bump.sh patch
+## Roadmap & Status Checklist
 
-# Bump minor: 1.0.0 -> 1.1.0 (creates dual tags: v1.1.0 and v1.1)
-./bump.sh minor
+### Completed Capabilities (v1.0.x)
 
-# Bump major: 1.0.0 -> 2.0.0 (creates dual tags: v2.0.0 and v2.0)
-./bump.sh major
+- [x] **Core Format Parsers & Serializers**
+  - [x] SubRip (`.srt`) with 1-based sequential re-indexing and flexible timestamp parsing.
+  - [x] WebVTT (`.vtt`) with `WEBVTT` headers, cue settings parser, and non-decreasing timestamp ordering.
+  - [x] Advanced SubStation Alpha (`.ass`) with `[Script Info]`, `[V4+ Styles]`, and unknown section retention.
+  - [x] SubStation Alpha v4.00 (`.ssa`) with `[V4 Styles]`, `Marked=` fields, and 1–11 alignments.
+- [x] **Resilient I/O & Encodings**
+  - [x] Multi-tier BOM sniffer (UTF-32 LE/BE, UTF-16 LE/BE, UTF-8).
+  - [x] Strict UTF-8 verification with non-destructive fallback to Latin-1/ISO-8859-1 (no corrupted bytes).
+  - [x] Synchronous and asynchronous stream processing (`Load`, `LoadAsync`, `Save`, `SaveAsync`).
+- [x] **Immutable Core Architecture**
+  - [x] `SubtitleDocument` and `SubtitleCue` with defensive copying on construction.
+  - [x] Single source of truth in `SubtitleCue.RawText` with internal line ending normalization to `\n`.
+  - [x] Lazy, format-aware `PlainText` derivation.
+  - [x] Strongly-typed extension bags (`AssCueData`, `VttCueData`, `AssDocumentData`, `VttDocumentData`).
+- [x] **Time-Shifting Engine**
+  - [x] Positive and negative offset shifting with negative clamping to zero.
+  - [x] Automatic negative cue dropping (`DropNegativeCues`).
+  - [x] Selective predicate filtering (`Filter`).
+  - [x] Automatic WebVTT cue re-ordering and `X-TIMESTAMP-MAP` MPEG-TS timing recalculation.
+- [x] **Format Conversion & Coordinate Space Mapping**
+  - [x] Complete conversion matrix across SRT, WebVTT, ASS, and SSA.
+  - [x] Bidirectional coordinate mapping between WebVTT percentages and ASS PlayRes (libass `384x288` default).
+  - [x] WebVTT snap-to-lines heuristics and `<v Speaker>` <-> Actor mapping.
+  - [x] `ConversionReport` with machine-readable notice codes and strict `ThrowOnLoss` mode.
+- [x] **Strongly-Typed ASS AST & Tokenizer**
+  - [x] Zero-regex, lossless override block tokenizer.
+  - [x] 20+ sealed tag records (`PosTag`, `MoveTag`, `ColorTag`, `BoldTag`, `DrawingTag`, etc.).
+  - [x] `UnknownTag` fallback guaranteeing 100% round-trip preservation of custom tags.
+- [x] **Production Readiness & CI/CD**
+  - [x] Zero runtime dependencies across `netstandard2.0` and `net8.0`.
+  - [x] Public API freeze enforced via Roslyn `PublicApiAnalyzers`.
+  - [x] Property-based round-trip testing and golden file corpus suite (69 tests).
+  - [x] Automated CI, NuGet.org, and GitHub Packages release workflows.
 
-# Explicit version:
-./bump.sh 1.2.3
-```
+### Planned Features & Future Improvements (`v1.x`)
 
-- Whenever the patch component is `0` (such as `minor` or `major` releases like `1.1.0`), the script automatically generates **two annotated tags**: the full tag (e.g. `v1.1.0`) and the short tag (e.g. `v1.1`).
-- All tags are generated as **annotated tags**, so pushing both the commit and release tags requires only:
+- [ ] **Dual-Track Bilingual Stacking (`Subtitle.Stack`)**
+  - Merge secondary language tracks into a primary subtitle file with automatic top/bottom screen alignment.
+  - Split and synchronize overlapping cue timestamps between differing translation paces.
+- [ ] **Sequential Timeline Concatenation (`Subtitle.Concat`)**
+  - Stitch multiple part files (e.g. CD1 / CD2) sequentially with automatic cumulative offset shifting.
+- [ ] **Multi-Track Collision Reconciliation (`Subtitle.Reconcile`)**
+  - Detect and resolve visual overlaps and collisions between concurrent subtitle tracks.
+- [ ] **Sanitizer & Restyler Engine (`Subtitle.Sanitize` / `Subtitle.Restyle`)**
+  - Strip unneeded formatting, normalize font families, adjust minimum/maximum cue display durations.
+  - Profanity filtering and text cleanup routines.
 
-```bash
-git push --follow-tags
-```
+### Known Issues & Edge Cases
 
-### GitHub Actions Workflows
-
-- **CI Pipeline** (`.github/workflows/ci.yml`): Runs on push and pull requests to `master`/`main` to build, run all 69 unit, property, and golden corpus tests, and verify package validation across `netstandard2.0` and `net8.0`.
-- **NuGet Release** (`.github/workflows/release-nuget.yml`): Automatically packs and publishes `.nupkg` and `.snupkg` to **NuGet.org** on tag push (`v*`) using `${{ secrets.NUGET_API_KEY }}`.
-- **GitHub Packages Release** (`.github/workflows/release-github-packages.yml`): Automatically packs and publishes to **GitHub Packages** (`nuget.pkg.github.com`) on tag push (`v*`) using the built-in `${{ secrets.GITHUB_TOKEN }}`.
+1. **Unclosed ASS Override Blocks**: In lenient parsing mode, unclosed `{` without a closing `}` is treated as plain text rather than throwing an exception.
+2. **Dense Vector Drawings**: Converting ASS files with extensive vector art (`\p1` drawings) into WebVTT produces `DrawingDropped` warnings and strips vector commands.
+3. **Unity IL2CPP Code Stripping**: When using Unity with Aggressive Code Stripping, ensure generic dictionary constructors used in format bags are preserved via `link.xml`.
 
 ---
 
