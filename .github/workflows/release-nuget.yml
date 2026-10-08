@@ -1,0 +1,33 @@
+name: Release to NuGet
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  publish-nuget:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Build & Test
+        run: |
+          dotnet restore
+          dotnet build --configuration Release --no-restore
+          dotnet test --configuration Release --no-build
+
+      - name: Pack SubtitleToolkit
+        run: dotnet pack src/SubtitleToolkit/SubtitleToolkit.csproj --configuration Release --no-build -o ./nupkg
+
+      - name: Publish to NuGet.org
+        run: dotnet nuget push "./nupkg/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate

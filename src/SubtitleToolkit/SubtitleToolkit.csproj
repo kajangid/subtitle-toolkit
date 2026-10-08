@@ -9,6 +9,8 @@
     <Description>Lightweight, zero-dependency .NET library for parsing, converting, and time-shifting SRT, WebVTT, ASS, and SSA subtitles.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryUrl>https://github.com/kajangid/subtitle-toolkit</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
